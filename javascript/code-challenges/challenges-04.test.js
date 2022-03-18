@@ -95,15 +95,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  arr.sort((a, b) => {
-    if (a.price < b.price) {
-      return -1;
-    }
-    if (a.price > b.price) {
-      return 1;
-    }});
-
-  return arr;
+  arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,7 +112,15 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  arr.sort()
+  arr.sort((a, b) => {
+    if (a.price < b.price) {
+      return -1;
+    }
+    if (a.price > b.price) {
+      return 1;
+    }});
+
+  return arr;
 };
 
 
