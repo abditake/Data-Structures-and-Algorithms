@@ -133,7 +133,7 @@ const listFoods = (recipe) => {
     result.push(withoutUnits);
   });
   return result;
-};
+};git
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
