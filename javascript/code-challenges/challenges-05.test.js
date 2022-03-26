@@ -128,9 +128,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-    str.reduce((acc,current) => {
-      acc + current,''
-    } );
+  return str.split('').reduce((a, b) => b + a, '');
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -257,9 +255,11 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const extractStat = (statName, arr) => {
-  // Solution code here...
-};
+// const extractStat = (str) => {
+//     let arr = str.split('');
+//     let cool = arr.reduce((previous,current) => 
+//       return current + previous; ,''
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
