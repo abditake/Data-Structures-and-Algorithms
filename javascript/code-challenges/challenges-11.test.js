@@ -83,6 +83,10 @@ const divisibleByFiveTwoToThePower = (input) => {
   });
 };
 
+
+
+for let i
+  for let j
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
