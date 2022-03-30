@@ -82,11 +82,6 @@ const divisibleByFiveTwoToThePower = (input) => {
     return row.filter(cell => typeof cell === 'number' && cell % 5 === 0).map(cell => Math.pow(2, cell));
   });
 };
-
-
-
-for let i
-  for let j
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
