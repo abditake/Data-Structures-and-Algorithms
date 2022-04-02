@@ -11,7 +11,8 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // Solution code here...
+  let regex = /^(Mr\.|Mrs\.|Ms\.|Dr\.)\s[A-Za-z]+/;
+  return arr.filter(str => regex.test(str));
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +99,8 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let luke = arr.find(charc => character.name === 'Luke Skywalker');
+  return arr.filter(charc => parseInt(character.mass) > parseInt(luke.mass)).map(charc => character.name).join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,7 +118,7 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((A, B) => A[property] < B[property] ? -1 : 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,7 +134,8 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  let reg = /^(https:\/\/).+/;
+  return reg.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -155,7 +158,11 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  let oB = board.flat();
+  let columns = [0,1,2].map((e) => [oB[0+e],oB[3+e],oB[6+e]]);
+  let diagonal = [[oB[0],oB[4],oB[8]],[o[2],oB[4],oB[6]]];
+  let testBoards = [...columns,...diagonal,...board];
+  return testBoards.findIndex(arr => arr.every(pos => pos === 'X') || arr.every(pos => pos === 'O')) !== -1;
 };
 
 /* ------------------------------------------------------------------------------------------------
