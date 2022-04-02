@@ -7,7 +7,15 @@ Write a function named longestString that takes in an array of strings and retur
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-
+ 
+  let longstr;
+  if (arr.length > 0) {
+    longstr = arr.reduce((a, b) => {
+      b.length > a.length ? a = b : a = a;
+      return a;
+    });
+  }
+  return arr.indexOf(longstr);
 };
   
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +39,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.filter(a => a.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,7 +51,7 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  return JSON.parse(JSON.stringify(arr).replace(/[-)( ]+/g, ''));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +63,9 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let array = [];
+  str.split('').reduce((e, value, index) => index % 2 === 1 ? array.push(value) : '', []);
+  return array.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,7 +75,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.length === arr.filter(element => element.includes(`:)`)).length;
 };
 
 /* ------------------------------------------------------------------------------------------------
