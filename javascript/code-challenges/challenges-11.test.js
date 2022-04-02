@@ -62,7 +62,7 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  return input.flat(1).reduce((a, b) => a + b, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,6 +82,7 @@ const divisibleByFiveTwoToThePower = (input) => {
     return row.filter(cell => typeof cell === 'number' && cell % 5 === 0).map(cell => Math.pow(2, cell));
   });
 };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -145,7 +146,15 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.reduce((nameString,character,idx) => {
+    if(idx < data.length - 1 && (character.gender === 'male' || character.gender === 'female')){
+      return nameString + character.name + ' and ';
+    } else if (character.gender === 'male' || character.gender === 'female'){
+      return nameString + character.name;
+    } else {
+      return nameString;
+    }
+  },'');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -155,7 +164,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((shortest, char) => parseInt(shortest.height) < char.height ? shortest : char).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
