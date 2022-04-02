@@ -99,8 +99,8 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  let luke = arr.find(charc => character.name === 'Luke Skywalker');
-  return arr.filter(charc => parseInt(character.mass) > parseInt(luke.mass)).map(charc => character.name).join(' - ');
+  let luke = arr.find(charc => charc.name === 'Luke Skywalker');
+  return arr.filter(charc => parseInt(charc.mass) > parseInt(luke.mass)).map(charc => charc.name).join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,9 +158,9 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  let oB = board.flat();
-  let columns = [0,1,2].map((e) => [oB[0+e],oB[3+e],oB[6+e]]);
-  let diagonal = [[oB[0],oB[4],oB[8]],[o[2],oB[4],oB[6]]];
+  let oneBoard = board.flat();
+  let columns = [0,1,2].map((element) => [oneBoard[0+element],oneBoard[3+element],oneBoard[6+element]]);
+  let diagonal = [[oneBoard[0],oneBoard[4],oneBoard[8]],[oneBoard[2],oneBoard[4],oneBoard[6]]];
   let testBoards = [...columns,...diagonal,...board];
   return testBoards.findIndex(arr => arr.every(pos => pos === 'X') || arr.every(pos => pos === 'O')) !== -1;
 };
