@@ -1,5 +1,8 @@
 # Singly Linked List
-<!-- Short summary or background information -->
+A linked list is a data structure where the objects are arranged 
+in a linear order. Unlike an array, however, in which the linear 
+order is determined by the array indices, the order in a linked 
+list is determined by a pointer in each object.  
 
 ## Challenge
 <!-- Description of the challenge -->
