@@ -5,10 +5,15 @@ order is determined by the array indices, the order in a linked
 list is determined by a pointer in each object.  
 
 ## Challenge
-<!-- Description of the challenge -->
+adding append, insertbefore and insertafter
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Used node to make sure the methods were outputting the correct results
 
 ## API
-<!-- Description of each method publicly available to your Linked List -->
+insert
+includes
+append
+insertbefore
+insertafter
+traverse
