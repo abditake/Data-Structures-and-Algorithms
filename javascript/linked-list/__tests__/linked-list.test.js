@@ -15,7 +15,7 @@ describe('Linked List', () => {
 
   test('Can properly insert into the linked list', () => {
     const list = new LinkedList();
-    list.insert('node');
+    list.add('node');
     expect(list.head.value).toEqual('node');
   });
 
@@ -27,10 +27,10 @@ describe('Linked List', () => {
   test('Can properly insert multiple nodes into the linked list', () => {
     const linkedList = new LinkedList();
 
-    linkedList.insert(14);
-    linkedList.insert(15);
-    linkedList.insert(90);
-    linkedList.insert(20);
+    linkedList.add(14);
+    linkedList.add(15);
+    linkedList.add(90);
+    linkedList.add(20);
 
     expect(linkedList.head.value).toEqual(14);
     expect(linkedList.head.next.value).toEqual(15);
@@ -41,8 +41,8 @@ describe('Linked List', () => {
   test('Will return true when finding a value within the linked list that exists', () => {
     const list = new LinkedList();
 
-    list.insert(18);
-    list.insert(30);
+    list.add(18);
+    list.add(30);
 
     const result = list.includes(30);
     expect(result).toEqual(true);
@@ -52,9 +52,9 @@ describe('Linked List', () => {
   test('Will return false when searching for a value in the linked list that does not exist', () => {
     const list = new LinkedList();
 
-    list.insert(15);
-    list.insert(40);
-    list.insert(45);
+    list.add(15);
+    list.add(40);
+    list.add(45);
 
     const result = list.includes(42);
     expect(result).toEqual(false);
@@ -64,11 +64,11 @@ describe('Linked List', () => {
     const result = [];
     const list = new LinkedList();
 
-    list.insert(35);
-    list.insert(45);
-    list.insert(13);
-    list.insert(9);
-    list.insert(23);
+    list.add(35);
+    list.add(45);
+    list.add(13);
+    list.add(9);
+    list.add(23);
 
     result.push(list);
 
@@ -78,8 +78,8 @@ describe('Linked List', () => {
   test('Can successfully add a node to the end of the linked list', () => {
     const list = new LinkedList();
 
-    list.insert(30);
-    list.insert(45);
+    list.add(30);
+    list.add(45);
 
     list.append(16);
 
@@ -90,8 +90,8 @@ describe('Linked List', () => {
   test('Can successfully insert a node before a node located in the middle of a linked list', () => {
     const list = new LinkedList();
 
-    list.insert(15);
-    list.insert(20);
+    list.add(15);
+    list.add(20);
     list.insertBefore(20, 18);
 
     expect(list.head.value).toEqual(15);
@@ -101,8 +101,8 @@ describe('Linked List', () => {
   test('Can successfully insert a node after the last node of the linked list', () => {
     const list = new LinkedList();
 
-    list.insert(14);
-    list.insert(45);
+    list.add(14);
+    list.add(45);
 
     list.insertAfter(45, 15);
 
@@ -113,13 +113,37 @@ describe('Linked List', () => {
   test('Where k and the length of the list are the same', () => {
     const list = new LinkedList();
 
-    list.insert(1);
-    list.insert(3);
-    list.insert(8);
-    list.insert(2);
+    list.add(1);
+    list.add(3);
+    list.add(8);
+    list.add(2);
 
     expect(list.kthFromEnd(4)).toEqual(`Node no.4 value from last is 1`);
   });
+
+  test('Should be able to zipper two linked lists', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    const zipped = new LinkedList();
+
+    list1.add(1);
+    list1.add(3);
+    list1.add(2);
+
+    list2.add(5);
+    list2.add(9);
+    list2.add(4);
+
+    const zipperedList = zipped.zipLists(list1, list2);
+
+    expect(zipperedList.head.value).toEqual(1);
+    expect(zipperedList.head.next.value).toEqual(5);
+    expect(zipperedList.head.next.next.value).toEqual(3);
+    expect(zipperedList.head.next.next.next.value).toEqual(9);
+    expect(zipperedList.head.next.next.next.next.value).toEqual(2);
+    expect(zipperedList.head.next.next.next.next.next.value).toEqual(4);
+    expect(zipperedList.head.next.next.next.next.next.next).toEqual(null);
+  })
 
 
 });
