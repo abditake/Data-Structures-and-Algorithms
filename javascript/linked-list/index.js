@@ -124,30 +124,82 @@ class LinkedList {
     }
   }
 
+  kthFromEnd(k) {
+    let count = 0;
+    let current = this.head;
+    let temp = this.head;
+
+    if (this.head !== null) {
+      while (count < k) {
+        if (temp === null) {
+          console.log(`${k} is greater than the no. of Nodes in list`);
+          return `${k} is greater than the no. of Nodes in list`;
+        }
+        temp = temp.next;
+        count++;
+      }
+      if (temp === null) {
+        if (this.head !== null) {
+          console.log(`Node no. ${k}/s value from last is  + ${this.head.value}`);
+          return `Node no. ${k}/s value from last is  + ${this.head.value}`;
+        } else {
+          while (temp !== null) {
+            current = current.next;
+            temp = temp.next;
+          }
+          console.log(`Node no.${k} from last is ${current.value}`);
+          return `Node no.${k} from last is ${current.value}`;
+        }
+      }
+    }
+  }
+
+  zipLists(list1, list2) {
+    let zipper = new LinkedList();
+    let currentA = list1.head;
+    let currentB = list2.head;
+    let currentZip = zipper.head;
+    while (currentA && currentB) {
+      if (currentZip === null) {
+        zipper.head = currentA;
+        currentZip = zipper.head;
+        currentA = currentA.next;
+      }
+      currentZip.next = currentB;
+      currentB = currentB.next;
+      currentZip = currentZip.next;
+      currentZip.next = currentA;
+      currentA = currentA.next;
+      currentZip = currentZip.next;
+    }
+    currentA ? currentZip.next = currentA : currentZip.next = currentB;
+    return zipper;
+  }
+
 }
 
-const linkList = new LinkedList();
 
 
 
-const nodeA = new Node('a');
-// // const nodeB = new Node('b');
-// // const nodeC = new Node('c');
-// // const nodeD = new Node('d');
 
-linkList.head = nodeA;
+// const nodeA = new Node('a');
+// // // const nodeB = new Node('b');
+// // // const nodeC = new Node('c');
+// // // const nodeD = new Node('d');
 
-linkList.add(1);
-linkList.add(2);
-linkList.add(3);
-linkList.add(4);
-linkList.add(5);
-linkList.add(98);
-linkList.add(2314);
-linkList.includes(2);
-linkList.traverse();
-linkList.insertBefore(4,6);
-// console.log(linkList);
+// linkList.head = nodeA;
+
+// linkList.add(1);
+// linkList.add(2);
+// linkList.add(3);
+// linkList.add(4);
+// linkList.add(5);
+// linkList.add(98);
+// linkList.add(2314);
+// linkList.includes(2);
+// linkList.traverse();
+// linkList.insertBefore(4, 6);
+// // console.log(linkList);
 
 module.exports = LinkedList;
 module.exports = Node;

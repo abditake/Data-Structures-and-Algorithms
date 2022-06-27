@@ -5,10 +5,12 @@ order is determined by the array indices, the order in a linked
 list is determined by a pointer in each object.  
 
 ## Challenge
-<!-- Description of the challenge -->
-
+kth from end
+  - argument: a number, k, as a parameter.
+  - Return the node’s value that is k places from the tail of the linked list.
+  - You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Used node to make sure the methods were outputting the correct results
 
 ## API
-<!-- Description of each method publicly available to your Linked List -->
+kthFromEnd
