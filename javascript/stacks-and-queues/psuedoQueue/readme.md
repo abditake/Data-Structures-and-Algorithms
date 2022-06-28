@@ -1,3 +1,2 @@
 
 
-![PseudoStack](../img/PseudoStack.jpg)
