@@ -10,9 +10,6 @@
             -   `pref` can be either `"dog"` or `"cat"`
         -   Return: either a dog or a cat, based on preference.
             -   If `pref` is not `"dog"` or `"cat"` then return null.
-## Whiteboard Process
-<!-- Embedded whiteboard image -->
-
 ## Approach & Efficiency
 Created two classes dog and cat
 make sure they had a type in those class using extends
