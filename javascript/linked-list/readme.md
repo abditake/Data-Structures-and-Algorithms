@@ -5,12 +5,15 @@ order is determined by the array indices, the order in a linked
 list is determined by a pointer in each object.  
 
 ## Challenge
-kth from end
-  - argument: a number, k, as a parameter.
-  - Return the node’s value that is k places from the tail of the linked list.
-  - You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
-## Approach & Efficiency
-Used node to make sure the methods were outputting the correct results
+Write a function called zip lists
+  Arguments: 2 linked lists
+    Return: New Linked List, zipped as noted below
+        Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the the zipped list.
+        Try and keep additional space down to O(1)
+        You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
-## API
-kthFromEnd
+## Solution
+Creating a 3 linked lists.
+  - one is the zippered link list the other two are link list A and B then set the values of the zipper linked list 
+    to the head and next values of linked A follwing that make the values that come after linked list A the head and
+    next values of linked list B. This will in turn create that Zipper.layering the two linked list on each other.
