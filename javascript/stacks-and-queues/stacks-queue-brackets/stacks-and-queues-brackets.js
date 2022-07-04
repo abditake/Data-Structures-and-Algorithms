@@ -1,53 +1,40 @@
+/* eslint-disable no-prototype-builtins */
 'use strict';
 
 const { Stack } = require('../stacks-and-queues');
 
-// 
-class Brackets{
+
+class Brackets {
 
 
-  constructor(){
+  constructor() {
     this.stack = new Stack;
   }
 
-  // still working this out I got help 
-  
-  isBracketValid = (brackets) => {
-    if(brackets.length % 2 !== 0){
+  // still working this out I got help
+
+  isBracketValid(brackets) {
+    if (brackets.length % 2 !== 0) {
       return false;
     }
-    const brackets = {
+    const map = {
       '[': ']',
       '(': ')',
-      '{': '}'
+      '{': '}',
     };
     for (const bracket of brackets) {
-  
-     if(map.hasOwnProperty(bracket)) {
-       this.stack.push(bracket)
-     } else {
-       
-   }
+
+      if (map.hasOwnProperty(bracket)) {
+        this.stack.push(bracket);
+      } else {
+        const closeBracket = this.stack.pop();
+        if (bracket !== map[closeBracket]) {
+          return false;
+        }
+      }
+    }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // const { Stack } = require('../stacks-and-queues');
@@ -75,6 +62,25 @@ class Brackets{
 
 //   return stack.length === 0;
 // }
+
+
+
+
+module.exports = Brackets;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

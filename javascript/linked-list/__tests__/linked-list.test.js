@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList   = require('../index.js');
+const { LinkedList } = require('../index');
 
 
 describe('Linked List', () => {
@@ -117,7 +117,8 @@ describe('Linked List', () => {
     list.add(3);
     list.add(8);
     list.add(2);
-
+    list.add(6);
+    console.log(list);
     expect(list.kthFromEnd(4)).toEqual(`Node no.4 value from last is 1`);
   });
 
@@ -143,7 +144,5 @@ describe('Linked List', () => {
     expect(zipperedList.head.next.next.next.next.value).toEqual(2);
     expect(zipperedList.head.next.next.next.next.next.value).toEqual(4);
     expect(zipperedList.head.next.next.next.next.next.next).toEqual(null);
-  })
-
-
+  });
 });

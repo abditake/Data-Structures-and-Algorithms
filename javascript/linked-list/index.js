@@ -200,8 +200,16 @@ class LinkedList {
 // linkList.traverse();
 // linkList.insertBefore(4, 6);
 // // console.log(linkList);
+const list = new LinkedList();
+list.add(1);
+list.add(3);
+list.add(8);
+list.add(2);
 
-module.exports = LinkedList;
-module.exports = Node;
+list.kthFromEnd(5);
+module.exports = {
+  LinkedList,
+  Node
+};
 
 
