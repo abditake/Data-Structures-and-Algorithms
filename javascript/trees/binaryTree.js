@@ -67,6 +67,7 @@ module.exports = {
   BinaryTree,
   Node
 };
+
 // let tree  = new Binarytree();
 
 // tree.root = new Node(10);
