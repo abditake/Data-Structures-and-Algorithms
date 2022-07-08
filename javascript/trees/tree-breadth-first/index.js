@@ -16,7 +16,7 @@ class BinaryTree {
 }
 
 
-function breadthFirstSearch(tree){
+function breadthFirst(tree){
   let queue = [];
   let result = [];
   let current = null;
@@ -33,13 +33,13 @@ function breadthFirstSearch(tree){
       queue.push(current.right);
     }
   }
-  console.log(result);
+  return result;
 }
 
 
 let tree = new BinaryTree();
 
-
+console.log(tree);
 
 tree.root = new Node(1);
 tree.root.left = new Node(2);
@@ -52,7 +52,15 @@ tree.root.right.left = new Node(6);
 tree.root.right.right = new Node(7);
 
 
-breadthFirstSearch(tree);
+breadthFirst(tree);
+
+
+module.exports = {
+  Node,
+  breadthFirst,
+  BinaryTree,
+};
+
 
 
 
