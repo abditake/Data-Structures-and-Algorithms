@@ -12,4 +12,4 @@
 - Add all node values at each level starting from root to an array then return that array
 
 ### Whiteboard Process
-![Algorithm](../img/Algo.png)
+![Algorithm](../img/Algo.jpg)
