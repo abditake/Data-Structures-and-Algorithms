@@ -32,7 +32,7 @@ describe('Test insertion sample array', () => {
     let q = [2,3,5,7,13,11];
     let sorted = insertionSort(q);
 
-    expect(sorted).toEqual([2,3,5,7, 11, 13]);
+    expect(sorted).toEqual([2,3,5,7,11,13]);
 
   });
 });
