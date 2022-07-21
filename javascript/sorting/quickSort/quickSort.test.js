@@ -1,6 +1,6 @@
 'use strict';
 
-const { quickSort } = require('../index.js');
+const { quickSort } = require('./index');
 
 describe('Testing quickSort', () => {
   test('should put an unordered array in order', () => {
