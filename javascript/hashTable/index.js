@@ -33,6 +33,7 @@ class HashTable {
       this.buckets[position] = bucket;
     }
   }
+
   get(key) {
     let position = this.hash(key);
 
@@ -55,15 +56,11 @@ class HashTable {
   }
 
   keys() {
-    for (let i = 0; i < this.buckets.length; i++) {
-      if (this.buckets[i] !== null) {
-        console.log(`Bucket: ${i}`);
-        this.buckets[i].forEach(element => {
-          console.log(`${element.key} : ${element.value}`);
-        });
-        console.log('null');
-      }
-    }
+    let obj = this.buckets;
+    obj.forEach((e => {
+      const [key] = Object.entries(e.head.value);
+      console.log(key);
+    }));
   }
 }
 

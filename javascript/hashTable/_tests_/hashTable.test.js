@@ -26,4 +26,10 @@ describe('HashTable tests', () =>{
     table.set('Abdi', 9123);
     expect(table.get('Abdi')).toBe(9123);
   });
+
+  test('can get a value from a key', () =>{
+    let table = new HashTable(1024);
+    table.set('Abdi', 9123);
+    expect(table.keys()).toBe(9123);
+  });
 });
