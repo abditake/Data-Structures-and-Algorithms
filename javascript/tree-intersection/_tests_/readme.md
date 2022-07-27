@@ -1,1 +1,0 @@
-![tree-intersection](../img/tree-intersection-uml.png)
