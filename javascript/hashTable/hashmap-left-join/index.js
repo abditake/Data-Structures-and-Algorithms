@@ -6,7 +6,8 @@ function LeftJoins(hash1, hash2) {
   // let synonymKeyArr = [['diligent'], ['fond'], ['guide'], ['outfit'], ['wrath']];
   // let antonymKeyArr = [['diligent'], ['fond'], ['guide'], ['flow'], ['wrath']];
 
-  // used arrays to built this and utilzed the o(1) lookup of hashmaps to jut add new elements to bucket
+  // hard coded the keys instead of utilizing or relying on hashmaps a little more
+
 
   let synonymKeyArr = [['diligent',hash1.get('diligent')], ['fond',hash1.get('fond')], ['guide',hash1.get('guide')], ['outfit',hash1.get('outfit')], ['wrath',hash1.get('wrath')]];
   let antonymKeyArr = [['diligent'], ['fond'], ['guide'], ['flow'], ['wrath']];
@@ -26,7 +27,7 @@ function LeftJoins(hash1, hash2) {
         break;
       }
     }
-    return synonymKeyArr
+    return synonymKeyArr;
   }
 }
 
